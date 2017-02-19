@@ -1,6 +1,5 @@
 import processing.serial.*;
 
-int size = 300;
 int pointNumber = 1024 ;
 int rectSize;
 int pointPerLine;
@@ -10,9 +9,9 @@ int colors[] = new int[pointNumber];
 
 Serial port = new Serial(this, Serial.list()[0], 115200);
 void setup() {
-  println("In uso la porta seriale: "+Serial.list()[0]);
+  println("Using serial port: "+Serial.list()[0]);
   println(Serial.list());
-  size(size, size);
+  size(300, 300);
   pointPerLine = ceil(sqrt(pointNumber)); 
   rectSize = size/pointPerLine;
   port.buffer(pointNumber);
